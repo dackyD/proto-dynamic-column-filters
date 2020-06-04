@@ -1,0 +1,32 @@
+<dx-data-grid class="dx-card wide-card"
+              width="100%"
+              [dataSource]="dataSource"
+              [showBorders]="false"
+              [focusedRowEnabled]="true"
+              [focusedRowIndex]="0"
+              [columnAutoWidth]="true"
+              [allowColumnReordering]="true"
+              [allowColumnResizing]="true"
+              [remoteOperations]="true"
+              [columnHidingEnabled]="true"
+>
+
+  <dxo-scrolling mode="virtual" rowRenderingMode="virtual"></dxo-scrolling>
+  <dxo-paging [pageSize]="10"></dxo-paging>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxi-column *ngFor="let column of columns"
+              dataField="{{column.dataField}}"
+              caption="{{column.caption}}"
+              dataType="{{column.dataType}}"
+              [width]="column.width"
+              [(filterValue)]="column.filterValue"
+              [(selectedFilterOperation)]="column.selectedFilterOperation"
+  >
+    <dxo-lookup *ngIf="column?.lookup && column?.lookup.length"
+                [dataSource]="column.lookup"
+                valueExpr="value"
+                displayExpr="name">
+    </dxo-lookup>
+  </dxi-column>
+</dx-data-grid>

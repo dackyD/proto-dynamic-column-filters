@@ -1,0 +1,64 @@
+[
+  {
+    "dataField": "Task_ID",
+    "caption": "Task ID",
+    "dataType": "number",
+    "width": 90
+  },
+  {
+    "dataField": "Task_Subject",
+    "caption": "Subject",
+    "dataType": "string",
+    "width": 190
+  },
+  {
+    "dataField": "Task_Status",
+    "caption": "Status",
+    "dataType": "string",
+    "width": "auto"
+  },
+  {
+    "dataField": "Task_Priority",
+    "caption": "Priority",
+    "dataType": "number",
+    "width": "auto",
+    "lookup": [
+      {"name": "High", "value": 4},
+      {"name": "Urgent", "value": 3},
+      {"name": "Normal", "value": 2},
+      {"name": "Low", "value": 1}
+    ],
+    "filterValue": 4,
+    "selectedFilterOperation": "="
+  },
+  {
+    "dataField": "ResponsibleEmployee.Employee_Full_Name",
+    "caption": "Assigned To",
+    "dataType": "string",
+    "width": "auto"
+  },
+  {
+    "dataField": "Task_Start_Date",
+    "caption": "Start Date",
+    "dataType": "date",
+    "width": "auto"
+  },
+  {
+    "dataField": "Task_Due_Date",
+    "caption": "Due Date",
+    "dataType": "date",
+    "width": "auto"
+  },
+  {
+    "dataField": "Task_Priority",
+    "caption": "Priority",
+    "dataType": "number",
+    "width": "auto"
+  },
+  {
+    "dataField": "Task_Completion",
+    "caption": "Completion",
+    "dataType": "number",
+    "width": "auto"
+  }
+]

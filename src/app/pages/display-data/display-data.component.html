@@ -1,0 +1,20 @@
+<div class="dx-fieldset">
+  <div class="dx-fieldset-header">Dynamic Column Filters</div>
+  <div class="dx-field">
+    <div class="dx-field-label">Filter</div>
+    <div class="dx-field-value">
+      <dx-select-box #selectDisplayFilter [items]="displayFilters" [value]="displayFilters[0]">
+      </dx-select-box>
+    </div>
+  </div>
+  <div class="current-value">
+    Selected Display Filter: <span>{{selectDisplayFilter.value}}</span>
+  </div>
+</div>
+
+<section>
+  <app-data-grid [columns]="columns$ | async"
+                 [dataSource]="dataSource">
+  </app-data-grid>
+</section>
+
