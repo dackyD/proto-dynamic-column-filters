@@ -11,7 +11,8 @@ enum FiltersEnum {
   SUBJECT = 'Subject',
   EMPLOYEE = 'Employee',
   STATUS = 'Status',
-  PRIORITY = 'Priority'
+  PRIORITY = 'Priority',
+  PRIORITY_WITH_SORT = 'Priority with sort'
 }
 
 @Component({
@@ -60,6 +61,7 @@ export class DisplayDataComponent implements AfterViewInit, OnInit {
     const employee$ = this.http.get('/assets/column-employee.json');
     const status$ = this.http.get('/assets/column-status.json');
     const priority$ = this.http.get('/assets/column-priority.json');
+    const priorityWithSort$ = this.http.get('/assets/column-with-sort.json');
 
     this.definedDisplayFilterMap = new Map<string, Observable<any>>(
       [
@@ -67,7 +69,8 @@ export class DisplayDataComponent implements AfterViewInit, OnInit {
         [FiltersEnum.SUBJECT, subject$],
         [FiltersEnum.EMPLOYEE, employee$],
         [FiltersEnum.STATUS, status$],
-        [FiltersEnum.PRIORITY, priority$]
+        [FiltersEnum.PRIORITY, priority$],
+        [FiltersEnum.PRIORITY_WITH_SORT, priorityWithSort$]
       ]
     );
 

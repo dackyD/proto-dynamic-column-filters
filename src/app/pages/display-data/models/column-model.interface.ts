@@ -5,5 +5,6 @@ export interface ColumnModel {
   width: number;
   filterValue: string;
   selectedFilterOperation: string;
+  sortOrder: string;
   lookup?: any[];
 }

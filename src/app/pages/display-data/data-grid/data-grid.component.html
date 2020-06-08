@@ -22,6 +22,7 @@
               [width]="column.width"
               [(filterValue)]="column.filterValue"
               [(selectedFilterOperation)]="column.selectedFilterOperation"
+              [(sortOrder)]="column.sortOrder"
   >
     <dxo-lookup *ngIf="column?.lookup && column?.lookup.length"
                 [dataSource]="column.lookup"
